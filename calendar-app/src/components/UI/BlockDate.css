@@ -1,0 +1,45 @@
+.block {
+  flex: 0 0 calc(14.1% - 10px);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: var(--border);
+  border-radius: 20px;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+  cursor: pointer;
+}
+
+.block p {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--text-main);
+}
+
+.block.inactive:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-blue);
+}
+
+.block.inactive:hover p {
+  color: var(--accent-blue);
+}
+
+.block.active {
+  background: var(--accent-light);
+  border: 2px dashed var(--accent-blue);
+}
+
+.block.active p {
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.block:has(p:empty), .block p:empty {
+  background: transparent;
+  border: 1px dashed #94a3b89b;
+  pointer-events: none;
+  opacity: 0.5;
+}
